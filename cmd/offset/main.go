@@ -55,15 +55,9 @@ func run(r io.Reader, w io.Writer, args []string, opt option) error {
 		return errors.New("the number of given files is not one")
 	}
 	filename := args[0]
-	file, err := os.Open(filename)
+	p, err := offset.FromFilename(filename, opt.offset)
 	if err != nil {
 		return err
 	}
-	defer file.Close()
-	p, err := offset.FromOffset(file, opt.offset)
-	if err != nil {
-		return fmt.Errorf("failed to get offset from %s: %v", filename, err)
-	}
-	p.File = filename
 	return json.NewEncoder(w).Encode(p)
 }
