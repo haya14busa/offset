@@ -1,0 +1,5 @@
+github.com/google/go-cmp v0.4.0 h1:xsAVV57WRhGj6kEIi8ReJzQlHHqcBYCElAvkovg3B/4=
+github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/haya14busa/tmpl v1.0.1 h1:tNGVQtKJxOn8SxgA/SwtQUJNGK1GF18qkZzwY+6YYgE=
+github.com/haya14busa/tmpl v1.0.1/go.mod h1:7lOOB6pHAV5GtIlfViicdjK1NSmwFjJFBCWH494/n9I=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
