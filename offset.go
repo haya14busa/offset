@@ -67,7 +67,7 @@ func FromFilename(filename string, offset int) (Position, error) {
 		return Position{}, err
 	}
 	defer file.Close()
-	p, err := FromFilename(filename, offset)
+	p, err := FromOffset(file, offset)
 	if err != nil {
 		return Position{}, fmt.Errorf("failed to get offset from %s: %v", filename, err)
 	}
