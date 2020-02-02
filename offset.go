@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"os"
 	"strings"
 )
 
@@ -58,4 +59,13 @@ func FromOffset(r io.Reader, offset int) (Position, error) {
 		return Position{Offset: offset, Line: line, Column: col}, nil
 	}
 	return Position{}, fmt.Errorf("invalid offset=%d", offset)
+}
+
+func FromFilename(filename string, offset int) (Position, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return Position{}, err
+	}
+	defer file.Close()
+	return FromOffset(file, offset)
 }
