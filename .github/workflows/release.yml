@@ -27,7 +27,7 @@ jobs:
           if_false: ${{ steps.bumpr.outputs.next_version }}
 
       # Create release.
-      - uses: haya14busa/goreleaser-action@nosnapshot
+      - uses: goreleaser/goreleaser-action@v1
         if: "steps.tag.outputs.value != ''"
         with:
           version: latest
